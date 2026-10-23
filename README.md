@@ -1,4 +1,7 @@
 # Driver Drowsiness Detection
+**First Prize, Regional Round** – National Young Creativity Competition in Artificial Intelligence, 2026.
+Team project with Nguyễn Thị Thảo Ngân and Nguyễn Thanh Phương (FPT University Can Tho).
+This repository contains the demo version of the system.
 
 A real-time driver drowsiness monitoring demo built with **MediaPipe Face Landmarks** and **OpenCV**. It combines several fatigue signals instead of relying on a single "eyes closed" check, and includes a watchdog for automatic recovery and CSV event logging.
 
