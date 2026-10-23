@@ -1,0 +1,21 @@
+# Da kiem thu voi: Python 3.11
+# Ghim ro phien ban de tranh loi "chay duoc may nay, khong chay duoc may kia"
+# (nhuoc diem #4 - Kha nang tuong thich moi truong).
+#
+# mediapipe==0.10.9 la ban CUOI CUNG con day du API cu 'mp.solutions.face_mesh',
+# nhung CHI co wheel cho Python 3.8-3.11 (khong cai duoc tren 3.12+).
+# Tu ban mediapipe ~0.10.30 tro di, Google da GO HAN 'mp.solutions' - chi con
+# API moi 'mediapipe.tasks'. MediaPipeCpuBackend trong code da tu phat hien va
+# chuyen doi giua 2 API nay (xem log "ENV_INFO" va "[CANH BAO]" luc khoi dong).
+#
+# Dung "python_version" marker de 1 file requirements.txt DUY NHAT tu chon dung
+# phien ban theo may dang chay, khong can nguoi dung tu sua tay:
+#   - Python 3.8-3.11 -> mediapipe 0.10.9 (API cu, da test ky nhat)
+#   - Python 3.12 tro len -> mediapipe 0.10.14 (co wheel cho 3.12, van con API
+#     cu 'solutions'; neu may nao lo cai ban mediapipe MOI HON nua va API cu bi
+#     go, code se TU DONG rot xuong 'tasks' nho co san co che fallback)
+mediapipe==0.10.9; python_version < "3.12"
+mediapipe==0.10.14; python_version >= "3.12"
+
+opencv-python==4.9.0.80   # wheel dang cp37-abi3 -> dung duoc moi Python 3.7+, khong can tach nhanh
+numpy==1.26.4             # co wheel rieng cho ca 3.10/3.11/3.12
